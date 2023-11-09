@@ -6,7 +6,7 @@ exports.config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
-    port: 4723,
+
     //
     // ==================
     // Specify Test Files
@@ -23,9 +23,7 @@ exports.config = {
     // then the current working directory is where your `package.json` resides, so `wdio`
     // will be called from there.
     //
-    specs: [
-       './test/specs/**/*.js'
-    ],
+
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -52,14 +50,7 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        // capabilities for local Appium web tests on an Android Emulator
-        platformName: 'Android',
-        'appium:deviceName': 'Pixel 7 API 31',
-        'appium:platformVersion': '12.0',
-        'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(process.cwd(),'app/android/ApiDemos-debug.apk')
-    }],
+
 
     //
     // ===================
