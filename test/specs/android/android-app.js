@@ -1,16 +1,23 @@
+import HomeScreen from "../../screenobjects/android/homescreen";
+import Viewscreen from "../../screenobjects/android/viewscreen";
+
 describe("Android WebElements", () => {
   it("launch app and validate the text", async () => {
-    const appOption = await $("~App");
-    await appOption.click();
+    // const appOption = await $("~App");
+    // await appOption.click();
+
+    HomeScreen.appButton.click();
     const actionBar = await $("~Action Bar");
 
     await expect(actionBar).toBeExisting();
+    await driver.back();
+    
   });
 
-  it.only("scroll and select date", async () => {
+  it("scroll and select date", async () => {
 
-    await $("~Views").click();
-    await $("~Date Widgets").click();
+    await Viewscreen.viewScreenMenu.click();
+    await Viewscreen.datewidgetMenu.click();
     await $("//*[@resource-id= 'android:id/text1']").click();
     const date= await $("//*[@resource-id='io.appium.android.apis:id/dateDisplay']");
 
