@@ -1,10 +1,8 @@
-const path = require('path');
-const {config} = require('./wdio.shared.conf.js');
+const path = require("path");
+const { config } = require("./wdio.shared.conf.js");
 
 config.port = 4723;
-config.specs =[
-    '../test/specs/android/*.js'
-];
+config.specs = ["../test/specs/android/*.js"];
 
 config.capabilities = [
   {
@@ -17,4 +15,5 @@ config.capabilities = [
   },
 ];
 
+config.services = ["appium"];
 exports.config = config;
